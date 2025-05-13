@@ -23,7 +23,7 @@ return {
     { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
   },
   config = function()
-    local bordchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' }
+    local borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' }
     local height = { padding = 0.2 }
     local width = 0.5
     require('telescope').setup {
@@ -42,7 +42,7 @@ return {
         entry_prefix = ' ',
         multi_icon = ' ',
 
-        borderchars = bordchars,
+        borderchars = borderchars,
 
         results_title = '',
         prompt_title = '',
@@ -86,7 +86,7 @@ return {
           height = height,
           width = width,
         },
-        borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+        borderchars = borderchars,
         previewer = false,
       })
     end, { desc = '[/] Fuzzily search in current buffer' })
