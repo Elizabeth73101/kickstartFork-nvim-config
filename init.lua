@@ -45,7 +45,7 @@ vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 
 vim.o.list = true
-vim.opt.listchars = { tab = '> ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '| ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
@@ -67,10 +67,9 @@ require 'keymaps'
 -- [[ Basic Autocommands ]]
 require 'autocommands'
 
--- [[ Install `lazy.nvim` plugin manager ]]
-require 'lazy-bootstrap'
-
 -- [[ Configure and install plugins ]]
+-- Install `lazy.nvim` plugin manager
+require 'lazy-bootstrap'
 require 'plugins'
 
 -- vim: ts=2 sts=2 sw=2 et

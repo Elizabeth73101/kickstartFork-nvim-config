@@ -9,13 +9,12 @@ return { -- Autocompletion
       version = '2.*',
       build = (function()
         -- Build Step is needed for regex support in snippets.
-        -- This step is not supported in many windows environments.
-        -- Remove the below condition to re-enable on windows.
         if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
           return
         end
         return 'make install_jsregexp'
       end)(),
+
       dependencies = {
         -- `friendly-snippets` contains a variety of premade snippets.
         --    See the README about individual language/framework/plugin snippets:
@@ -62,20 +61,30 @@ return { -- Autocompletion
       --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
     },
 
-    appearance = {
-      -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-      -- Adjusts spacing to ensure icons are aligned
-      nerd_font_variant = 'mono',
-    },
-
     completion = {
+      list = {
+        selection = {
+          preselect = true,
+          auto_insert = true,
+        },
+      },
+      -- Show only ghost text without menu, unless <c-space> is pressed to show the menu
+      ghost_text = { enabled = true, show_with_menu = false },
+      menu = { auto_show = false },
       -- By default, you may press `<c-space>` to show the documentation.
       -- Optionally, set `auto_show = true` to show the documentation after a delay.
       documentation = { auto_show = false, auto_show_delay_ms = 500 },
     },
 
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'lazydev' },
+      default = { 'lsp', 'path', 'snippets', 'buffer', 'omni' },
+      per_filetype = {
+        lua = {
+          inherit_defaults = true,
+          'lazydev',
+        },
+      },
+
       providers = {
         lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
       },
@@ -83,16 +92,9 @@ return { -- Autocompletion
 
     snippets = { preset = 'luasnip' },
 
-    -- Blink.cmp includes an optional, recommended rust fuzzy matcher,
-    -- which automatically downloads a prebuilt binary when enabled.
-    --
-    -- By default, we use the Lua implementation instead, but you may enable
-    -- the rust implementation via `'prefer_rust_with_warning'`
-    --
-    -- See :h blink-cmp-config-fuzzy for more information
-    fuzzy = { implementation = 'lua' },
+    fuzzy = { implementation = 'prefer_rust_with_warning' },
 
-    -- Shows a signature help window while you type arguments for a function
+    -- Shows a signature help window while typing arguments for a function
     signature = { enabled = true },
   },
 }

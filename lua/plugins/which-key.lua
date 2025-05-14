@@ -1,7 +1,7 @@
 return {
   -- Useful plugin to show you pending keybinds.
   'folke/which-key.nvim',
-  event = 'VimEnter', -- Sets the loading event to 'VimEnter'
+  event = 'VimEnter',
 
   -- Loads the plugin on this keymap
   -- Useful for showing LSP keybinds
@@ -31,12 +31,7 @@ return {
     end,
 
     icons = {
-      -- set icon mappings to true if you have a Nerd Font
-      -- mappings = vim.g.have_nerd_font,
       mappings = false,
-      -- If you are using a Nerd Font: set icons.keys to an empty table which will use the
-      -- default which-key.nvim defined Nerd Font icons, otherwise define a string table
-      -- keys = vim.g.have_nerd_font and {},
       keys = {
         Up = '<Up> ',
         Down = '<Down> ',
