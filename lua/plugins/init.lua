@@ -50,6 +50,15 @@ require('lazy').setup({
   -- A collection of smaller plugins
   require 'plugins.mini',
 
+  -- Indentation guides
+  --[[  {
+    'lukas-reineke/indent-blankline.nvim',
+    -- Enable `lukas-reineke/indent-blankline.nvim`
+    -- See `:help ibl`
+    main = 'ibl',
+    opts = {},
+  },
+  ]]
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',

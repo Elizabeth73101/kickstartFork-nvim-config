@@ -7,15 +7,18 @@ vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
---
--- Make line numbers default
 vim.o.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
 vim.o.relativenumber = false
-
--- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
+vim.o.confirm = false
+vim.o.list = true
+vim.opt.listchars = { tab = '> ', trail = '·', nbsp = '␣' }
+vim.o.cursorline = true
+vim.o.scrolloff = 5
+vim.o.breakindent = true
+vim.o.undofile = true
+vim.o.smarttab = true
+vim.o.expandtab = true
 
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
@@ -24,12 +27,6 @@ vim.o.showmode = false
 vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
-
--- Enable break indent
-vim.o.breakindent = true
-
--- Save undo history
-vim.o.undofile = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
@@ -40,26 +37,11 @@ vim.o.signcolumn = 'yes'
 
 -- Decrease update time
 vim.o.updatetime = 250
-
 -- Decrease mapped sequence wait time
 vim.o.timeoutlen = 300
 
-vim.o.list = true
-vim.opt.listchars = { tab = '| ', trail = '·', nbsp = '␣' }
-
--- Preview substitutions live, as you type!
+-- Preview substitutions live
 vim.o.inccommand = 'split'
-
--- Show which line your cursor is on
-vim.o.cursorline = true
-
--- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 5
-
--- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
--- instead raise a dialog asking if you wish to save the current file(s)
--- See `:help 'confirm'`
-vim.o.confirm = false
 
 -- [[ Basic Keymaps ]]
 require 'keymaps'
