@@ -47,9 +47,6 @@ require('lazy').setup({
   -- Autocompletion
   require 'plugins.blink',
 
-  -- Colorscheme
-  require 'plugins.colorscheme',
-
   -- A collection of smaller plugins
   require 'plugins.mini',
 
@@ -74,6 +71,9 @@ require('lazy').setup({
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
+
+  -- Colorscheme
+  require 'theme',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

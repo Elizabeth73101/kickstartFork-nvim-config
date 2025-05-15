@@ -1,0 +1,10 @@
+return {
+  'slugbyte/lackluster.nvim',
+  lazy = false,
+  priority = 1000,
+  config = function()
+    vim.cmd.colorscheme 'lackluster-hack'
+    -- vim.cmd.colorscheme("lackluster-hack") -- my favorite
+    -- vim.cmd.colorscheme("lackluster-mint")
+  end,
+}
