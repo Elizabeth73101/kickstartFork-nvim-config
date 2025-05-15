@@ -50,13 +50,21 @@ require('lazy').setup({
   -- A collection of smaller plugins
   require 'plugins.mini',
 
+  -- Filebrowser
+  require 'plugins.neo-tree',
+
   -- Indentation guides
-  --[[  {
+  --[[{
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help ibl`
     main = 'ibl',
-    opts = {},
+    opts = {
+      indent = {
+        highlight = { 'Whitespace' },
+      },
+      scope = { enabled = false },
+    },
   },
   ]]
   { -- Highlight, edit, and navigate code
