@@ -23,6 +23,8 @@ require('lazy').setup({
   require 'plugins.which-key',
   -- Fuzzy search
   require 'plugins.telescope',
+  -- Linter
+  require 'plugins.lint',
 
   --[[ LSP Plugins ]]
   {

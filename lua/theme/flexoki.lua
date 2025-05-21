@@ -73,9 +73,5 @@ return {
         -- end
       end,
     }
-
-    vim.cmd.colorscheme 'flexoki'
-    -- vim.cmd("colorscheme flexoki-moon")
-    -- vim.cmd("colorscheme flexoki-dawn")
   end,
 }
