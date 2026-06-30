@@ -13,7 +13,7 @@ return { -- Autoformat
     },
   },
   opts = {
-    notify_on_error = false,
+    notify_on_error = true,
     format_on_save = function(bufnr)
       local disable_filetypes = { c = true, cpp = true }
       if disable_filetypes[vim.bo[bufnr].filetype] then
@@ -28,11 +28,23 @@ return { -- Autoformat
     formatters_by_ft = {
       lua = { 'stylua' },
       rust = { 'rustfmt' },
+      c = { 'clang-format' },
+      h = { 'clang-format' },
+      cpp = { 'clang-format' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
+    },
+    formatters = {
+      ['clang-format'] = {
+        command = 'clang-format',
+        append_args = {
+          -- the file referenced here was generated using https://clang-format-configurator.site/
+          '--style=file:/home/Elizabeth/.config/nvim/lua/plugins/conform-formatter-config-files/clang-format',
+        },
+      },
     },
   },
 }

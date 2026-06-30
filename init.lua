@@ -58,7 +58,7 @@ require 'plugins'
 vim.cmd.colorscheme 'min-dark'
 
 ---@diagnostic disable: undefined-global
-vim.api.nvim_set_hl(0, 'Normal', { bg = None, fg = None })
-vim.api.nvim_set_hl(0, 'SignColumn', { bg = None, fg = None })
+vim.api.nvim_set_hl(0, 'Normal', { bg = None })
+vim.api.nvim_set_hl(0, 'SignColumn', { bg = None })
 ---@diagnostic enable
 -- vim: ts=2 sts=2 sw=2 et
