@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 -- Set <space> as the leader key
 -- See `:help mapleader`
 vim.g.mapleader = ' '
@@ -5,6 +6,9 @@ vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
+
+-- use the better 24-bit colours
+vim.o.termguicolors = true
 
 -- [[ Setting options ]]
 vim.o.number = true
@@ -57,7 +61,6 @@ require 'plugins'
 -- Load colorscheme and make background transparent
 vim.cmd.colorscheme 'min-dark'
 
----@diagnostic disable: undefined-global
 vim.api.nvim_set_hl(0, 'Normal', { bg = None })
 vim.api.nvim_set_hl(0, 'SignColumn', { bg = None })
 ---@diagnostic enable

@@ -53,7 +53,7 @@ require('lazy').setup({
   require 'plugins.mini',
 
   -- Filebrowser
-  require 'plugins.neo-tree',
+  require 'plugins.nvim-tree',
 
   -- Indentation guides
   --[[{
