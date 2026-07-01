@@ -7,17 +7,14 @@ return {
   },
   -- see nvim-tree-config-default for default config
   config = function()
+    local api = require 'nvim-tree.api'
     ---@type nvim_tree.config
     local opts = {
+      -- custom bindings
       -- here wo do stuff we wanna run when nvim-tree attaches
       on_attach = function(bufnr)
-        local api = require 'nvim-tree.api'
-
         -- default bindings -- REQUIRED
         api.map.on_attach.default(bufnr)
-
-        -- custom bindings
-        vim.keymap.set('n', '\\', api.tree.toggle)
 
         -- theme settings
         vim.api.nvim_set_hl(0, 'NvimTreeNormal', { bg = None })
@@ -71,5 +68,8 @@ return {
     }
 
     require('nvim-tree').setup(opts)
+    -- api use seems to be restrcted to AFTER the call to setup()
+    -- keymaps
+    vim.keymap.set('n', '\\', require('nvim-tree.api').tree.toggle)
   end,
 }
