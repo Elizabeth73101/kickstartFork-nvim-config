@@ -3,8 +3,6 @@ require('lazy').setup({
   { 'NMAC427/guess-indent.nvim', opts = {} }, -- We need to call it like this or it wont work
   'christoomey/vim-tmux-navigator',
 
-  -- See `:help gitsigns` to understand what the configuration keys do
-  -- See additional file gitsigns.lua for a more thorough config
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -50,25 +48,26 @@ require('lazy').setup({
   require 'plugins.blink',
 
   -- A collection of smaller plugins
+  -- Mainly used for more textobjects and the status line
   require 'plugins.mini',
 
   -- Filebrowser
   require 'plugins.nvim-tree',
 
   -- Indentation guides
-  --[[{
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help ibl`
-    main = 'ibl',
-    opts = {
-      indent = {
-        highlight = { 'Whitespace' },
-      },
-      scope = { enabled = false },
-    },
-  },
-  ]]
+  -- {
+  --   'lukas-reineke/indent-blankline.nvim',
+  --   -- Enable `lukas-reineke/indent-blankline.nvim`
+  --   -- See `:help ibl`
+  --   main = 'ibl',
+  --   opts = {
+  --     indent = {
+  --       highlight = { 'Whitespace' },
+  --     },
+  --     scope = { enabled = false },
+  --   },
+  -- },
+
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',

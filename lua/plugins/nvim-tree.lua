@@ -40,7 +40,7 @@ return {
             hidden = 'h',
             git = {
               unstaged = '~',
-              staged = '.',
+              staged = '+',
               unmerged = '^',
               renamed = '>',
               untracked = '?',
