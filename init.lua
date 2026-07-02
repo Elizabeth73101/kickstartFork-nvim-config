@@ -1,4 +1,3 @@
----@diagnostic disable: undefined-global
 -- Set <space> as the leader key
 -- See `:help mapleader`
 vim.g.mapleader = ' '
@@ -61,6 +60,7 @@ require 'plugins'
 -- Load colorscheme and make background transparent
 vim.cmd.colorscheme 'min-dark'
 
+---@diagnostic disable: undefined-global
 vim.api.nvim_set_hl(0, 'Normal', { bg = None })
 vim.api.nvim_set_hl(0, 'SignColumn', { bg = None })
 ---@diagnostic enable
