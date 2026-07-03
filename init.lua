@@ -46,6 +46,15 @@ vim.o.timeoutlen = 300
 -- Preview substitutions live
 vim.o.inccommand = 'split'
 
+-- Enable folding by expression
+vim.o.foldmethod = 'expr'
+-- -- for some reason nvim_treesitter#foldexpr() doesnt work
+vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+-- Disable all folds being closed on file open
+vim.o.foldenable = false
+-- Fixes some issues with the first time you fold something
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
 -- [[ Basic Keymaps ]]
 require 'keymaps'
 
