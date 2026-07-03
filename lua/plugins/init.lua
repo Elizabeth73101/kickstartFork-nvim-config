@@ -17,6 +17,14 @@ require('lazy').setup({
     },
   },
 
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    config = true,
+    -- use opts = {} for passing setup options
+    -- this is equivalent to setup({}) function
+  },
+
   -- Keybind helper
   require 'plugins.which-key',
   -- Fuzzy search
